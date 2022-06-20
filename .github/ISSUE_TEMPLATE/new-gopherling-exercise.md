@@ -7,8 +7,15 @@ assignees: ''
 
 ---
 
+<!-- Please reply the following questions in a sentence or two --->
+#### How does this exercise provide new concepts to be learned?
+
 #### Exercise code
 ```go
 
 ```
+
 #### Solution
+```go
+
+```
