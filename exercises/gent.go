@@ -1,5 +1,5 @@
-// gemt allows for manipulation of gopherling
-// exercise numeration.
+// gent is a tool to facilitate numeration of
+// gopherling exercises.
 package main
 
 import (
