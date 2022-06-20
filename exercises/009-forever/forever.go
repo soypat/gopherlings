@@ -10,6 +10,7 @@
 // In the code below i is initialized to 0, which then causes the for's
 // condition to evaluate to true. Since `i` is never changed the code is run
 // forever.
+
 package main
 
 import "fmt"
@@ -18,5 +19,6 @@ func main() {
 	i := 0
 	for i <= 3 {
 		fmt.Println(i) // Prints out numbers 0 to 3
+		// Did we forget to add 1 to something?
 	}
 }

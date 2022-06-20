@@ -16,8 +16,10 @@ func main() {
 	// % is the modulo operator. It returns the remainder of the division.
 	// A number is even when the remainder of number/2 is zero.
 	remainder := number % 2
+	
 	// Something is wrong with this conditional.
 	var is4even bool = remainder = 0
+
 	// This should print "4 is even:" followed by true or false depending
 	// on whether 4 (the number variable) is really a even number.
 	fmt.Println(number, "is even:", is4even)

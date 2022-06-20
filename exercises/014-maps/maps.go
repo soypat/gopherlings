@@ -10,12 +10,14 @@
 //
 //  myMap := make(map[int]int)
 //
-
+// When searching a map for a non-existent value the element's zero-value
+// will be returned.
 package main
 
 import "fmt"
 
 func main() {
+	// A map with string keys and integer elements.
 	var age map[string]int
 
 	// The program will crash if the map is not initialized correctly

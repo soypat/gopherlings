@@ -1,3 +1,4 @@
+//
 // Problem:
 // Below is a program that used to prints out values. Looks like
 // whomever refactored this was not aware fmt.Println accepts multiple arguments
@@ -7,6 +8,7 @@
 //
 // The previous program prints out "hello world 99". Variadic functions accept
 // an arbitrary number of arguments.
+
 package main
 
 import "fmt"

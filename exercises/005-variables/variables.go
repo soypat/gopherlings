@@ -1,4 +1,6 @@
+//
 // https://gobyexample.com/variables
+//
 // Problem:
 // In Go variables are declared with their type so that the compiler
 // can check correctness of function calls.
@@ -33,22 +35,28 @@
 //
 // In Go, variables that are declared without initialization are "zero-valued"
 // For example, strings will be the empty string "", numbers will be 0.
+//
 
 package main
 
 import "fmt"
 
 func main() {
+	// The value being assigned to `a` has a type
+	// that does not correspond to `a`'s type.
+	// Fix this line so that the following print
+	// prints "123".
 	var a string
-	a = 123 
-	fmt.Println(a) // Should print "123".
 
+	a = 123
+	fmt.Println(a)
+
+	// We are trying to declare and initialize variables `b` and `c`
+	// but there's an syntax error. Adding just 2 characters should suffice to it!
 	var b c int = 2*1 2*2
 	fmt.Println(b, c)
-	
-	var z int  // z should be set to b times c.
-	fmt.Println(900/z) 
 
+	// Someone tried using the shorthand initialization but got it wrong.
 	d = "pear"
 	fmt.Println(d)
 }
