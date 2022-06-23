@@ -11,6 +11,10 @@ package main
 import "fmt"
 
 func main() {
+	// In Go variable names must start with a letter.
+	const 20number = 20
+	fmt.Println(math.Sin(20number)) 
+	
 	const abc = "abc"
 	fmt.Println(abc)
 
@@ -22,9 +26,4 @@ func main() {
 	// Instead of assigning to an existing constant, declare a new one!
 	sum = sum + "cheeky addition"
 	fmt.Println(sum)
-
-	// In Go variable names must start with a letter.
-	const 20number = 20
-	fmt.Println(math.Sin(20number)) 
-
 }

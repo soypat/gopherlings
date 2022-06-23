@@ -19,7 +19,7 @@
 //
 // var a int = 2
 //
-// You can declare multiple variables in one line
+// To declare multiple variables in one line
 //
 //  var a, b string = "hello", "world"
 //

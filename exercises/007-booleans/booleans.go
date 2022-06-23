@@ -6,6 +6,12 @@
 //  ||    conditional OR     p || q  results true if either p or q are true.
 //  !     NOT                !p      results true if p is false.
 //
+// You may also use equality check `==` and the inequality check `!=` on boolean
+// types. The latter emulates the exclusive or operation (XOR).
+//
+//  !=   comparison NOT EQUAL  p != q  results true if p is not equal to q
+//  ==   comparison EQUAL      p == q  results true if p is equal to q
+//
 
 package main
 

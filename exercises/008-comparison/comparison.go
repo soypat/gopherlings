@@ -1,4 +1,7 @@
 //
+// Problem:
+// Go has comparison operators which compare two values and yield a boolean value.
+//
 // Go has support for the following comparison operators:
 //     a == b   means "a equals b"
 //     a < b    means "a is less than b"
@@ -16,9 +19,11 @@ func main() {
 	// % is the modulo operator. It returns the remainder of the division.
 	// A number is even when the remainder of number/2 is zero.
 	remainder := number % 2
+
 	
-	// Something is wrong with this conditional.
-	var is4even bool = remainder = 0
+	var is4even bool
+	// Something is wrong with this comparison.
+	is4even = remainder = 0
 
 	// This should print "4 is even:" followed by true or false depending
 	// on whether 4 (the number variable) is really a even number.
