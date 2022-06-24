@@ -43,3 +43,15 @@ Requires a [Go installation](https://go.dev/dl/) to run the examples.
     ```sh
     go run hello.go
     ```
+
+
+## Roadmap
+#### Short term
+* Add quizzes after $n$ exercises.
+  - Possibly add several quizzes of varying difficulty inside quiz directory.
+* Add a helper program.
+  - Could run most recently edited exercise and lead the coder in right direction.
+  - Could yield hints when coder requests it.
+
+#### Long term
+* Have exercises that cover the entire [Go spec](https://go.dev/ref/spec).

@@ -29,7 +29,10 @@ func main() {
 
 	fmt.Println(age)
 
-	// Sarah's age should display here. Keep in mind
-	// map finds exact matches.
-	fmt.Println(age["Sarah"])
+	// When accessing a map be carefult with
+	// the key- it must be an exact match to the
+	// key you are searching.
+	// If the key is not found then the access
+	// yields the zero value for the element type.
+	fmt.Println("Sarah's Age:", age["Sarah"])
 }
