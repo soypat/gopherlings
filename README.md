@@ -36,7 +36,7 @@ Requires a [Go installation](https://go.dev/dl/) to run the examples.
 
 2. Navigate to example's directory
     ```sh
-    cd gopherlings/exercise/001-hello
+    cd gopherlings/exercises/001-hello
     ```
 
 3. Edit the file so it is correct and run it with `go run`
