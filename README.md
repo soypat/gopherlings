@@ -26,7 +26,7 @@ Requires a [Go installation](https://go.dev/dl/) to run the examples.
 
 4. Navigate to the exercise file, i.e. [`exercises/001-hello/hello.go`](exercises/001-hello/hello.go)
 
-5. One the `hello.go` file is open you may edit it and press <kbd>F5</kbd> to run it. Output will be shown in the Debug Console.
+5. Once the `hello.go` file is open you may edit it and press <kbd>F5</kbd> to run it. Output will be shown in the Debug Console.
 
 ### Instructions using terminal
 1. Clone repository
