@@ -44,6 +44,11 @@ Requires a [Go installation](https://go.dev/dl/) to run the examples.
     go run hello.go
     ```
 
+4. *Option* instead of step 3. Use [air](https://github.com/cosmtrek/air) to auto reload your code after you save your code. Then you will see your code result without any action. You can simplely focus on your code.
+   ```sh
+   go install github.com/cosmtrek/air@latest
+   air
+   ```
 
 ## Roadmap
 #### Short term
