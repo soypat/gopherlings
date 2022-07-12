@@ -26,6 +26,6 @@ func setMovie(m movie) {
 	// Dot indexing is how we access fields in Go.
 	m.title = "Everything Everywhere All At Once"
 	m.score = 10
-	// The movie type is a copy, so all changes within this function
-	// are lost on function exit.
+	// The movie argument is a copy, so all changes within this function
+	// are lost on function exit. We should return a value here.
 }
