@@ -160,7 +160,8 @@ func usage(msg string) {
 	fmt.Fprintf(os.Stderr, "Supported commands:\n")
 	fmt.Fprintf(os.Stderr, "\tinsert [name of exercise directory]\n")
 	fmt.Fprintf(os.Stderr, "inserts an exercise directory and renames existing exercise numbers to avoid number collisions\n")
-	fmt.Fprintf(os.Stderr, "\trenames exercise numbers so that exercise numbers increase by 1\n")
+	fmt.Fprintf(os.Stderr, "\tcollapse\n")
+	fmt.Fprintf(os.Stderr, "renames all exercise numbers so that exercise numbers increase by 1\n")
 	if msg != "" {
 		fmt.Fprintf(os.Stderr, "%s\n", msg)
 	}

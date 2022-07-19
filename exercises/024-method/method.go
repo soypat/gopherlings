@@ -28,8 +28,9 @@ type book struct {
 	year   int
 }
 
-// Keep in mind we could also solve this excercise by simply renaming this method
-// to "String". The fmt package checks all arguments for the `String` method.
+// Worth noting we could also solve this excercise by simply renaming this method
+// to "String". The fmt package checks all arguments for the `String` method and
+// uses it to print out the arguments, overriding the default printing algorithm.
 func (b book) Info() string {
 	yearString := strconv.Itoa(b.year) // convert year to string!
 	return "\"" + b.title + "\" by " + b.author + " (" + yearString + ")"
