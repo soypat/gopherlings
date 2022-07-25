@@ -13,7 +13,7 @@ func main() {
 	var twoPlusThree int = 2 + three
 	// These two variables are of distinct types. To perform operations
 	// between variables they must be of the same type! Convert one of
-	// the variables in the Println, line so that the result of 1/3+2+3 is printed out.
+	// the variables in the Println so that the result of 1/3+2+3 is printed out.
 	// Don't add lines or change the lines above!
 	fmt.Println(oneThird + twoPlusThree)
 }
