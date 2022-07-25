@@ -33,6 +33,6 @@ func main() {
 	// the key- it must be an exact match of the
 	// key you are searching for.
 	// If the key is not found then the access
-	// yields a zero value for the element type.
+	// yields the zero value for the element type.
 	fmt.Println("Sarah's Age:", age["Sarah"])
 }
