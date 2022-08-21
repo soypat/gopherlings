@@ -18,6 +18,8 @@
 // Try fixing the argument to the fmt.Println function and run `go run hello.go`
 // to see if it works.
 
+// I AM STILL GOING
+
 package main
 
 import "fmt"

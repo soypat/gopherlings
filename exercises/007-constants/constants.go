@@ -6,6 +6,8 @@
 //
 // You can't modify or reassign to a constant in Go.
 
+// I AM STILL GOING
+
 package main
 
 import "fmt"
