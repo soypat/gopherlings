@@ -12,6 +12,7 @@ import (
 	"path/filepath"
 	"regexp"
 	"text/tabwriter"
+	"time"
 
 	"github.com/fatih/color"
 	"github.com/fsnotify/fsnotify"
@@ -19,6 +20,9 @@ import (
 )
 
 const exercisesDir = "exercises"
+
+// maxRuntime is the maximum time an exercise is allowed to run in watch mode.
+const maxRuntime = 5 * time.Second
 
 var reStillGoing = regexp.MustCompile(`(?m)^\s*//\s+I\s+AM\s+STILL\s+GOING`)
 var reExercise = regexp.MustCompile(`^(?P<id>\d+)-(?P<name>.+)$`)
@@ -181,7 +185,7 @@ func watch(exs []Exercise) error {
 
 		clear()
 
-		ctx, cancel := context.WithCancel(context.Background())
+		ctx, cancel := context.WithTimeout(context.Background(), maxRuntime)
 
 		done := make(chan struct{})
 		go func() {
@@ -300,23 +304,35 @@ func (e Exercise) Run(ctx context.Context) {
 	pkgPath := "." + string(filepath.Separator) + e.Dir
 
 	err := runPkg(ctx, pkgPath)
-	if isSignal(err) {
-		// Killed by signal. This is almost certainly due to a change from the
-		// file watcher. Hide the error message and pretend like it exited
-		// cleanly.
-		return
-	}
 
-	if err != nil {
+	switch {
+	case err == nil:
+		green.Println()
+		green.Println("Successfully ran exercise!")
+		green.Println(`Remove the "I AM STILL GOING" comment to continue to the next exercise.`)
+		green.Println()
+
+	case errors.Is(err, context.Canceled):
+		// Explicit cancel from the exercise driver (run or watch). Let the
+		// canceler decide what to print, if anything.
+
+	case errors.Is(err, context.DeadlineExceeded):
+		red.Println("The exercise ran for too long without exiting.")
+		red.Println("Exercises should generally finish running very quickly.")
+		red.Println("")
+		red.Println("Is there something preventing the program from exiting?")
+
+	case isSignal(err):
+		// Killed by signal for some other reason. This is probably not related
+		// to the exercise.
+		yellow.Println("The exercise stopped unexpectedly.")
+		yellow.Println("")
+		yellow.Println(err)
+
+	default:
+		// A real compile or runtime error related to the exercise.
 		red.Println(err)
-		return
 	}
-
-	green.Println()
-	green.Println("Successfully ran exercise!")
-	green.Println(`Remove the "I AM STILL GOING" comment to continue to the next exercise.`)
-	green.Println()
-	return
 }
 
 func runPkg(ctx context.Context, pkgPath string) error {
@@ -367,10 +383,24 @@ func compilePkg(ctx context.Context, pkg string) (*os.File, error) {
 
 func execFile(ctx context.Context, f *os.File) error {
 	cmd := exec.CommandContext(ctx, f.Name())
+
+	// TODO: Use io.LimitReader to prevent excessive output.
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
 
-	return cmd.Run()
+	err := cmd.Run()
+
+	// If both the context error and the process error are non-nil, cmd.Run()
+	// prefers the process error.
+	//
+	// But we have the opposite preference! If the exercise driver canceled the
+	// context, the way the process died isn't actually meaningful.
+	ctxErr := ctx.Err()
+	if ctxErr != nil {
+		return ctxErr
+	}
+
+	return err
 }
 
 func isSignal(err error) bool {
