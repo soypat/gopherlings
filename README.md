@@ -54,9 +54,11 @@ Requires a [Go installation](https://go.dev/dl/) to run the examples.
 #### Short term
 * Add quizzes after $n$ exercises.
   - Possibly add several quizzes of varying difficulty inside quiz directory.
-* Add a helper program.
-  - Could run most recently edited exercise and lead the coder in right direction.
-  - Could yield hints when coder requests it.
+* Improve the helper program.
+  - A `hint` subcommand or interactive hints during the `watch` command.
+  - Allow `run` to take an argument that runs a specific exercise.
+  - Add a subcommand to run all exercises and check them against expected output.
+  - Catch errors that prevent the helper from running exercises (like an incomplete Go installation).
 
 #### Long term
 * Have exercises that cover the entire [Go spec](https://go.dev/ref/spec).
