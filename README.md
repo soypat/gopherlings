@@ -43,19 +43,22 @@ Requires a [Go installation](https://go.dev/dl/) to run the examples.
     ```sh
     go run hello.go
     ```
-   Optionally, instead of step 3, use [air](https://github.com/cosmtrek/air) to auto reload your code after you save your code. Then you will see your code output without any action. You can simply focus on your code.
+   Optionally, instead of step 3, use `gopherlings watch` to auto reload your code after you save your code. Then you will see your code output without any action. You can simply focus on your code.
    ```sh
-   go install github.com/cosmtrek/air@latest
-   air
+   go install github.com/soypat/gopherlings/cmd/gopherlings@latest
+   gopherlings watch
+   gopherlings help  # To see other commands
    ```
 
 ## Roadmap
 #### Short term
 * Add quizzes after $n$ exercises.
   - Possibly add several quizzes of varying difficulty inside quiz directory.
-* Add a helper program.
-  - Could run most recently edited exercise and lead the coder in right direction.
-  - Could yield hints when coder requests it.
+* Improve the helper program.
+  - A `hint` subcommand or interactive hints during the `watch` command.
+  - Allow `run` to take an argument that runs a specific exercise.
+  - Add a subcommand to run all exercises and check them against expected output.
+  - Catch errors that prevent the helper from running exercises (like an incomplete Go installation).
 
 #### Long term
 * Have exercises that cover the entire [Go spec](https://go.dev/ref/spec).

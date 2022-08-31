@@ -11,6 +11,8 @@
 // condition to evaluate to true. Since `i` is never changed the code is run
 // forever.
 
+// I AM STILL GOING
+
 package main
 
 import "fmt"

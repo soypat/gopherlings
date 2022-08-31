@@ -9,6 +9,8 @@
 // The previous program prints out "hello world 99". Variadic functions accept
 // an arbitrary number of arguments.
 
+// I AM STILL GOING
+
 package main
 
 import "fmt"
