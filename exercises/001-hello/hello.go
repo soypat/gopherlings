@@ -17,6 +17,10 @@
 //
 // Try fixing the argument to the fmt.Println function and run `go run hello.go`
 // to see if it works.
+//
+// If you are using the gopherlings helper program
+// you may uncomment the "I AM STILL GOING" to continue
+// solving the next exercises.
 
 // I AM STILL GOING
 

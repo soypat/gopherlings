@@ -99,21 +99,6 @@ type e struct {
 	name string
 }
 
-func parseExerciseDirName(name string) (e, error) {
-	if len(name) < 5 {
-		return e{}, errors.New("exercise name too short")
-	}
-	n, err := strconv.Atoi(name[0:3])
-	if err != nil {
-		return e{}, err
-	}
-	en := e{num: n, name: name[4:]}
-	if en.dirName() != name {
-		return e{}, fmt.Errorf("generated directory name %q does not match argument name %q", en.dirName(), name)
-	}
-	return en, nil
-}
-
 func (en e) dirName() string {
 	return fmt.Sprintf("%03d-%s", en.num, en.name)
 }
@@ -152,6 +137,21 @@ func parseDirExercises(dir string) ([]e, error) {
 		found = append(found, exercise)
 	}
 	return found, nil
+}
+
+func parseExerciseDirName(name string) (e, error) {
+	if len(name) < 5 {
+		return e{}, errors.New("exercise name too short")
+	}
+	n, err := strconv.Atoi(name[0:3])
+	if err != nil {
+		return e{}, err
+	}
+	en := e{num: n, name: name[4:]}
+	if en.dirName() != name {
+		return e{}, fmt.Errorf("generated directory name %q does not match argument name %q", en.dirName(), name)
+	}
+	return en, nil
 }
 
 func usage(msg string) {
