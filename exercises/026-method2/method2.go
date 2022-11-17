@@ -9,6 +9,11 @@ package main
 import "fmt"
 
 func main() {
+	// Notice that unlike with composite literals like
+	// structs, maps and slices we may not initialize
+	// a XORer with curly braces {}, we actually perform a type
+	// conversion from the bool primitive type to XORer.
+	// This works since XORer is of underlying type bool.
 	True := XORer(true)
 	False := XORer(false)
 	fmt.Println("true ^ true =", True.xor(true))

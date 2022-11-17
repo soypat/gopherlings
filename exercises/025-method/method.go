@@ -1,5 +1,17 @@
+//
 // Problem:
-// TODO
+// Go does not have classes. However, you can define methods on types.
+//
+// A method is a function with a special receiver argument.
+// The receiver appears in its own argument list between the func keyword and the method name.
+// In this example, the Info method has a receiver of type book named b.
+//
+// And remember, methods are just functions. The method below could be rewritten to be
+// a regular function with no change in functionality:
+//
+//  func Info(b book) string {
+//		// same code
+//  }
 
 // I AM STILL GOING
 
@@ -33,6 +45,7 @@ type book struct {
 // Worth noting we could also solve this excercise by simply renaming this method
 // to "String". The fmt package checks all arguments for the `String` method and
 // uses it to print out the arguments, overriding the default printing algorithm.
+// See the fmt.Stringer type.
 func (b book) Info() string {
 	yearString := strconv.Itoa(b.year) // convert year to string!
 	return "\"" + b.title + "\" by " + b.author + " (" + yearString + ")"
