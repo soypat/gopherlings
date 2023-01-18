@@ -42,7 +42,7 @@ type book struct {
 	year   int
 }
 
-// Worth noting we could also solve this excercise by simply renaming this method
+// Worth noting we could also solve this exercise by simply renaming this method
 // to "String". The fmt package checks all arguments for the `String` method and
 // uses it to print out the arguments, overriding the default printing algorithm.
 // See the fmt.Stringer type.

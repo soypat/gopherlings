@@ -8,7 +8,7 @@
 //  } else {
 //  	x = max
 //  }
-// 
+//
 // if statements with else if and/or a preceding statement
 //
 //  if x := f(); x > max {
@@ -31,7 +31,7 @@ func main() {
 	if number > 0 {
 		fmt.Println("number is greater than 0")
 	} {
-		fmt.Println("number is less than 0") 
+		fmt.Println("number is less than 0")
 	}
 
 	// Please make sure conditionals are correct.

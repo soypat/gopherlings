@@ -10,7 +10,7 @@
 // by "second".
 //
 // A common pattern is to append to the same slice
-// 
+//
 //  elements = append(elements, "an item")
 //
 
@@ -24,7 +24,7 @@ func main() {
 	var evens []int
 	for i := 1; i <= 20; i++ {
 		if i%2 == 0 {
-			// Knowing the basic mechanics of slices, how 
+			// Knowing the basic mechanics of slices, how
 			// would you go about constructing a slice of
 			// all even numbers from 1 up to 20?
 			evens = ??
