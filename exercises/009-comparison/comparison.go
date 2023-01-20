@@ -22,7 +22,7 @@ func main() {
 	// A number is even when the remainder of number/2 is zero.
 	remainder := number % 2
 
-	
+
 	var is4even bool
 	// Something is wrong with this comparison.
 	is4even = remainder = 0

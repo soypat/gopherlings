@@ -21,7 +21,7 @@ func main() {
 		fiboAdded[i] += i
 	}
 	// Oof. We have inadvertently modified both slices
-	// Try using the clone function bewlow to make a
+	// Try using the clone function below to make a
 	// deep copy of the fibonacci slice so that edits to
 	// one are not reflected in the other.
 	fmt.Println(fibonacci, fiboAdded)
