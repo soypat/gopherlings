@@ -5,6 +5,8 @@
 // It is a curiously simple interface but broad in scope. In a few lines
 // of code we may define an entire image.
 
+// I AM STILL GOING
+
 package main
 
 import (
