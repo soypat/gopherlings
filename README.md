@@ -49,6 +49,7 @@ Requires a [Go installation](https://go.dev/dl/) to run the examples.
    gopherlings watch
    gopherlings help  # To see other commands
    ```
+   Note: You need to define your `GOBIN` environment variable before running `go install` and add it to your `PATH`. `GOBIN` specifies the directory to which go binaries are installed to.
 
 ## Roadmap
 #### Short term
