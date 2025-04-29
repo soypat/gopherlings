@@ -7,6 +7,7 @@ For a first time learner it is suggested you complement this material with anoth
 
 - [Go by example](https://gobyexample.com/). A lot of material here is based on this project!
 - [Go go-to guide](https://yourbasic.org/golang/) by yourbasic. Great source for beginners.
+- [Decaffeinator](https://github.com/soypat/decaffeinator) project which contains the Tagalong document with Python and Go examples side-by-side along with some examples on using Go for creating generative art.
 
 ## Intended Audience
 These exercises will probably be difficult if you've never programmed before. 
